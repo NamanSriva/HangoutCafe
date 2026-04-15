@@ -1,0 +1,135 @@
+.status-page {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.status-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.status-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.order-id {
+  color: var(--text-secondary);
+  font-family: monospace;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.status-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  z-index: 2;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 3px solid var(--border-color);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: all 0.4s ease;
+}
+
+.step-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.timeline-step.active .step-icon {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+}
+
+.step-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.timeline-step.active .step-label {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.step-line {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 100%;
+  height: 4px;
+  background-color: var(--border-color);
+  z-index: -1;
+  transition: background-color 0.4s ease;
+}
+
+.step-line.active {
+  background-color: var(--accent-color);
+}
+
+.current-status-message {
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: rgba(var(--accent-color), 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.current-status-message p {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.pickup-ready h3 {
+  color: #10b981;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .status-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .timeline-step {
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .step-line {
+    top: 60px;
+    left: 30px;
+    width: 4px;
+    height: 100%;
+  }
+}
