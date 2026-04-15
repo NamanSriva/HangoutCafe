@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import { CartContext } from '../context/CartContext';
-import axios from 'axios';
+import API from '../api/axios';
+import toast from 'react-hot-toast';
 import './Menu.css';
 
 const Menu = () => {
@@ -15,7 +16,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const { data } = await axios.get('/api/menu');
+        const { data } = await API.get('/api/menu');
         if (Array.isArray(data)) {
           setMenuItems(data);
           setLoading(false);
@@ -23,6 +24,7 @@ const Menu = () => {
           throw new Error('API did not return an array');
         }
       } catch (error) {
+        toast.error('Failed to load menu');
         // Fallback mock data if backend isn't running yet
         setMenuItems([
           { _id: '1', name: 'Caramel Macchiato', category: 'Coffee', price: 4.5, description: 'Espresso with vanilla-flavored syrup, milk, and caramel drizzle.', imageUrl: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&q=80', isAvailable: true },

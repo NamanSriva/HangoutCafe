@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, Plus, Minus, CreditCard, ArrowRight, Wallet, Tag } from 'lucide-react';
 import { CartContext } from '../context/CartContext';
 import { AuthContext } from '../context/AuthContext';
-import axios from 'axios';
+import API from '../api/axios';
 import toast from 'react-hot-toast';
 import './Cart.css';
 
@@ -26,7 +26,7 @@ const Cart = () => {
     if (!couponInput.trim()) return;
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      const { data } = await axios.post('/api/coupons/validate', { code: couponInput }, config);
+      const { data } = await API.post('/api/coupons/validate', { code: couponInput }, config);
       setAppliedCoupon(data);
       toast.success(`Coupon applied! ₹${data.amount.toFixed(2)} off.`);
       if (subTotalWithTax - data.amount <= 0) {

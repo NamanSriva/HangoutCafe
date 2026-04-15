@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 import { BarChart3, PackageOpen, TrendingUp, Users, ShoppingBag, PieChart } from 'lucide-react';
 import SalesReport from '../components/SalesReport';
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import API from '../api/axios';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -27,10 +27,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const config = {
-          headers: { Authorization: `Bearer ${user.token}` },
-        };
-        const { data } = await axios.get('http://localhost:5000/api/orders/stats', config);
+        const { data } = await API.get('/api/orders/stats');
         setStats(data);
         setLoading(false);
       } catch (error) {

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import axios from 'axios';
+import API from '../api/axios';
 import toast from 'react-hot-toast';
 import { Tag, CheckCircle, XCircle } from 'lucide-react';
 import './AdminDashboard.css';
@@ -20,12 +20,7 @@ const MyCoupons = () => {
 
     const fetchMyCoupons = async () => {
       try {
-        const config = {
-          headers: {
-            Authorization: `Bearer ${user.token}`
-          }
-        };
-        const { data } = await axios.get('/api/coupons/mycoupons', config);
+        const { data } = await API.get('/api/coupons/mycoupons');
         setCoupons(data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
       } catch (error) {
         toast.error('Failed to load your coupons');

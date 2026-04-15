@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, Coffee, Bell, Smile, XCircle } from 'lucide-react';
-import axios from 'axios';
+import API from '../api/axios';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../context/AuthContext';
 import { useContext } from 'react';
@@ -49,8 +49,7 @@ const OrderStatus = () => {
 
     const fetchOrder = async () => {
       try {
-        const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        const { data } = await axios.get(`/api/orders/${orderId}`, config);
+        const { data } = await API.get(`/api/orders/${orderId}`);
         setOrder(data);
         const currentIndex = statuses.findIndex(s => s.key === data.status);
         if (currentIndex !== -1) setStatusIndex(currentIndex);

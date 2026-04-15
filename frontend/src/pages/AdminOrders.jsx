@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import axios from 'axios';
+import API from '../api/axios';
 import toast from 'react-hot-toast';
 import { RefreshCw, Tag } from 'lucide-react';
 import './AdminDashboard.css';
@@ -15,13 +15,7 @@ const AdminOrders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const config = {
-        headers: {
-          Authorization: `Bearer ${user.token}`
-        }
-      };
-      // For Vite to proxy properly, or direct to 5000 if absolute
-      const { data } = await axios.get('/api/orders', config);
+      const { data } = await API.get('/api/orders');
       // Sort newest first
       setOrders(data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
     } catch (error) {
@@ -47,13 +41,7 @@ const AdminOrders = () => {
 
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
-      const config = {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${user.token}`
-        }
-      };
-      await axios.put(`/api/orders/${orderId}/status`, { status: newStatus }, config);
+      await API.put(`/api/orders/${orderId}/status`, { status: newStatus });
       toast.success('Order status updated');
       fetchOrders(); // refresh
     } catch (error) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import API from '../api/axios';
 import toast from 'react-hot-toast';
 import { Plus, Edit2, Trash2, ArrowLeft } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
@@ -33,7 +33,7 @@ const AdminMenuManager = () => {
 
   const fetchItems = async () => {
     try {
-      const { data } = await axios.get('/api/menu');
+      const { data } = await API.get('/api/menu');
       setItems(data);
     } catch (error) {
       toast.error('Failed to load menu items');
@@ -62,10 +62,7 @@ const AdminMenuManager = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this item?')) {
       try {
-        const config = {
-          headers: { Authorization: `Bearer ${user.token}` }
-        };
-        await axios.delete(`/api/menu/${id}`, config);
+        await API.delete(`/api/menu/${id}`);
         toast.success('Item deleted successfully');
         fetchItems();
       } catch (error) {
