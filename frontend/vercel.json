@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://hangout-cafe-api.onrender.com/api/$1"
+      "destination": "https://hangoutcafe.onrender.com/api/$1"
     },
     {
       "source": "/(.*)",
