@@ -16,6 +16,12 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (item, qty) => {
     const existItem = cartItems.find((x) => x.product === item._id);
+    const currentQty = existItem ? existItem.qty : 0;
+
+    if (currentQty + qty > 10) {
+      toast.error(`You can only order up to 10 units of ${item.name}`);
+      return;
+    }
 
     if (existItem) {
       setCartItems(
