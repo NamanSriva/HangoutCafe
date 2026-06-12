@@ -1,0 +1,60 @@
+- generic [ref=e2]:
+  - status [ref=e71]: Checkout failed
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Hangout Cafe" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e9]: Hangout Cafe
+        - button [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+    - main [ref=e12]:
+      - generic [ref=e13]:
+        - heading "Your Order" [level=1] [ref=e14]
+        - generic [ref=e15]:
+          - generic [ref=e17]:
+            - img "Espresso Gold" [ref=e18]
+            - generic [ref=e19]:
+              - heading "Espresso Gold" [level=3] [ref=e20]
+              - paragraph [ref=e21]: ₹150.00
+            - generic [ref=e22]:
+              - generic [ref=e23]:
+                - button [disabled] [ref=e24]:
+                  - img [ref=e25]
+                - generic [ref=e26]: "1"
+                - button [ref=e27] [cursor=pointer]:
+                  - img [ref=e28]
+              - button [ref=e29] [cursor=pointer]:
+                - img [ref=e30]
+            - generic [ref=e33]: ₹150.00
+          - generic [ref=e34]:
+            - heading "Order Summary" [level=2] [ref=e35]
+            - generic [ref=e36]:
+              - generic [ref=e37]: Subtotal
+              - generic [ref=e38]: ₹150.00
+            - generic [ref=e39]:
+              - generic [ref=e40]: Taxes (8%)
+              - generic [ref=e41]: ₹12.00
+            - generic [ref=e42]:
+              - generic [ref=e43]: Total
+              - generic [ref=e44]: ₹162.00
+            - generic [ref=e46]:
+              - textbox "Enter Coupon Code" [ref=e47]
+              - button "Apply" [disabled] [ref=e48] [cursor=pointer]
+            - generic [ref=e49]:
+              - heading "Payment Method" [level=3] [ref=e50]
+              - generic [ref=e51]:
+                - generic [ref=e52] [cursor=pointer]:
+                  - radio "Google Pay / UPI" [checked] [ref=e53]
+                  - img [ref=e54]
+                  - text: Google Pay / UPI
+                - generic [ref=e56] [cursor=pointer]:
+                  - radio "Cash at Counter" [ref=e57]
+                  - img [ref=e58]
+                  - text: Cash at Counter
+            - button "Pay with Google Pay" [active] [ref=e61] [cursor=pointer]:
+              - img [ref=e62]
+              - text: Pay with Google Pay
+    - contentinfo [ref=e64]:
+      - paragraph [ref=e65]: © 2026 Hangout Cafe. All rights reserved.

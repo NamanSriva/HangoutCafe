@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { Plus, Edit2, Trash2, ArrowLeft } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
 import './AdminMenuManager.css';
+import axios from 'axios';
 
 const AdminMenuManager = () => {
   const { user } = useContext(AuthContext);
@@ -100,6 +101,7 @@ const AdminMenuManager = () => {
       setFormData({ name: '', category: '', description: '', price: '', imageUrl: '', inventoryCount: '' });
       fetchItems();
     } catch (error) {
+      console.log(error.message);
       toast.error(error.response?.data?.message || 'Operation failed');
     }
   };

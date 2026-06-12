@@ -104,7 +104,7 @@ const OrderStatus = () => {
     <div className="container status-page animate-fade-in">
       <div className="status-card glass" style={order?.status === 'cancelled' ? { border: '1px solid #d32f2f' } : {}}>
         <h2>Order Status</h2>
-        <p className="order-id">Order ID: #{orderId}</p>
+        <p className="order-id">Order ID: #{order?.orderNumber || orderId}</p>
 
         {order?.status === 'cancelled' ? (
           <div className="text-center my-4">

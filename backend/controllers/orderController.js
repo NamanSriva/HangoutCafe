@@ -186,7 +186,7 @@ const cancelOrder = async (req, res, next) => {
 
 ejs.renderFile(templatePath, {
   userName: order.user.name.split(' ')[0],
-  orderId: order._id.toString().slice(-6).toUpperCase(),
+  orderId: order.orderNumber || order._id.toString().slice(-6).toUpperCase(),
   amount: order.totalPrice.toFixed(2),
   couponCode: fullCode
 }, async (err, data) => {

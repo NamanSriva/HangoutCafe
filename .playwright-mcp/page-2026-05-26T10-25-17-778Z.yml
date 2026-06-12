@@ -1,0 +1,28 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Hangout Cafe" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7]
+        - generic [ref=e9]: Hangout Cafe
+      - button [ref=e10] [cursor=pointer]:
+        - img [ref=e11]
+  - main [ref=e12]:
+    - generic [ref=e16]:
+      - heading "Create an Account" [level=2] [ref=e28]
+      - generic [ref=e18]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: Name
+          - textbox "Enter your name" [ref=e31]
+        - generic [ref=e19]:
+          - generic [ref=e20]: Email Address
+          - textbox "Enter your email" [ref=e21]
+        - generic [ref=e22]:
+          - generic [ref=e23]: Password
+          - textbox "Enter your password" [ref=e24]
+        - button "Sign Up" [ref=e32] [cursor=pointer]
+      - paragraph [ref=e26]:
+        - text: Already have an account?
+        - button "Log In" [active] [ref=e33] [cursor=pointer]
+  - contentinfo [ref=e13]:
+    - paragraph [ref=e14]: © 2026 Hangout Cafe. All rights reserved.

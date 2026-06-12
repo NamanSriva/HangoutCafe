@@ -71,7 +71,7 @@ const AdminOrders = () => {
             {orders.map(order => (
               <div key={order._id} className="stat-card glass" style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <h3 style={{ margin: 0, fontSize: '1.2rem' }}>Order #{order._id.substring(order._id.length - 6).toUpperCase()}</h3>
+                  <h3 style={{ margin: 0, fontSize: '1.2rem' }}>Order #{order.orderNumber || order._id.substring(order._id.length - 6).toUpperCase()}</h3>
                   <span className="highlight" style={{ fontWeight: 'bold' }}>₹{order.totalPrice.toFixed(2)}</span>
                 </div>
                 

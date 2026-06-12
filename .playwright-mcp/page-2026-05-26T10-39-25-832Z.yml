@@ -1,0 +1,67 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Hangout Cafe" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7]
+        - generic [ref=e9]: Hangout Cafe
+      - button [ref=e10] [cursor=pointer]:
+        - img [ref=e11]
+  - main [ref=e12]:
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - button "Back to Dashboard" [ref=e85] [cursor=pointer]:
+            - img [ref=e86]
+            - text: Back to Dashboard
+          - heading "Manage Menu Items" [level=1] [ref=e88]
+        - button "Add New Item" [ref=e89] [cursor=pointer]:
+          - img [ref=e90]
+          - text: Add New Item
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - img "Espresso Gold" [ref=e93]
+          - heading "Espresso Gold" [level=3] [ref=e94]
+          - paragraph [ref=e95]: "₹150.00 | Beverages | In Stock: 100"
+          - generic [ref=e96]:
+            - button "Edit" [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+              - text: Edit
+            - button "Delete" [ref=e100] [cursor=pointer]:
+              - img [ref=e101]
+              - text: Delete
+        - generic [ref=e104]:
+          - img "Margherita Pizza" [ref=e105]
+          - heading "Margherita Pizza" [level=3] [ref=e106]
+          - paragraph [ref=e107]: "₹299.00 | Breads | In Stock: 20"
+          - generic [ref=e108]:
+            - button "Edit" [ref=e109] [cursor=pointer]:
+              - img [ref=e110]
+              - text: Edit
+            - button "Delete" [ref=e112] [cursor=pointer]:
+              - img [ref=e113]
+              - text: Delete
+        - generic [ref=e116]:
+          - img "Cold Coffee" [ref=e117]
+          - heading "Cold Coffee" [level=3] [ref=e118]
+          - paragraph [ref=e119]: "₹149.00 | Beverages | In Stock: 30"
+          - generic [ref=e120]:
+            - button "Edit" [ref=e121] [cursor=pointer]:
+              - img [ref=e122]
+              - text: Edit
+            - button "Delete" [ref=e124] [cursor=pointer]:
+              - img [ref=e125]
+              - text: Delete
+        - generic [ref=e128]:
+          - img "Cheese Burger" [ref=e129]
+          - heading "Cheese Burger" [level=3] [ref=e130]
+          - paragraph [ref=e131]: "₹50.00 | Breads | In Stock: 20"
+          - generic [ref=e132]:
+            - button "Edit" [ref=e133] [cursor=pointer]:
+              - img [ref=e134]
+              - text: Edit
+            - button "Delete" [ref=e136] [cursor=pointer]:
+              - img [ref=e137]
+              - text: Delete
+  - contentinfo [ref=e14]:
+    - paragraph [ref=e15]: © 2026 Hangout Cafe. All rights reserved.

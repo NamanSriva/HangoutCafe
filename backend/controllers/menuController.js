@@ -48,6 +48,7 @@ const createMenuItem = async (req, res, next) => {
     const createdItem = await item.save();
     res.status(201).json(createdItem);
   } catch (error) {
+    console.log(error);
     next(error);
   }
 };

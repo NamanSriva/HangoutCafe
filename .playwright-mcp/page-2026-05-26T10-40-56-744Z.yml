@@ -1,0 +1,58 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Hangout Cafe" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e9]: Hangout Cafe
+        - button [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+    - main [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e16]:
+          - heading "Admin Dashboard" [level=1] [ref=e17]
+          - paragraph [ref=e18]: Welcome back, Admin. Here's what's happening today.
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - img [ref=e168]
+            - generic [ref=e171]:
+              - heading "Total Sales" [level=3] [ref=e172]
+              - paragraph [ref=e173]: ₹324.00
+          - generic [ref=e174]:
+            - img [ref=e176]
+            - generic [ref=e178]:
+              - heading "Orders Today" [level=3] [ref=e179]
+              - paragraph [ref=e180]: "1"
+          - generic [ref=e181]:
+            - img [ref=e183]
+            - generic [ref=e187]:
+              - heading "Menu Items" [level=3] [ref=e188]
+              - paragraph [ref=e189]: "4"
+          - generic [ref=e190]:
+            - img [ref=e192]
+            - generic [ref=e197]:
+              - heading "Total Users" [level=3] [ref=e198]
+              - paragraph [ref=e199]: "3"
+          - generic [ref=e200]:
+            - img [ref=e202]
+            - generic [ref=e205]:
+              - heading "Total Orders" [level=3] [ref=e206]
+              - paragraph [ref=e207]: "11"
+          - generic [ref=e208]:
+            - img [ref=e210]
+            - generic [ref=e215]:
+              - heading "New Customers" [level=3] [ref=e216]
+              - paragraph [ref=e217]: "1"
+        - generic [ref=e218]:
+          - heading "Quick Actions" [level=2] [ref=e219]
+          - generic [ref=e220]:
+            - button "Manage Menu Items" [ref=e221] [cursor=pointer]
+            - button "View Live Orders" [ref=e222] [cursor=pointer]
+            - button "Sales Report" [ref=e223] [cursor=pointer]:
+              - img [ref=e224]
+              - text: Sales Report
+            - button "Inventory Report" [ref=e227] [cursor=pointer]
+    - contentinfo [ref=e14]:
+      - paragraph [ref=e15]: © 2026 Hangout Cafe. All rights reserved.
+  - generic [ref=e147]: "85"

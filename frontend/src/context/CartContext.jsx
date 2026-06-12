@@ -4,14 +4,11 @@ import toast from 'react-hot-toast';
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
+  const [cartItems, setCartItems] = useState(() => {
     const savedCart = localStorage.getItem('cartItems');
-    if (savedCart) {
-      setCartItems(JSON.parse(savedCart));
-    }
-  }, []);
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
 
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));

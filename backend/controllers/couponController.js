@@ -6,8 +6,8 @@ const Coupon = require('../models/Coupon');
 const getMyCoupons = async (req, res, next) => {
   try {
     const coupons = await Coupon.find({ user: req.user._id })
-      .populate('generatedFromOrder', '_id')
-      .populate('usedInOrder', '_id createdAt');
+      .populate('generatedFromOrder', '_id orderNumber')
+      .populate('usedInOrder', '_id orderNumber createdAt');
     res.json(coupons);
   } catch (error) {
     next(error);

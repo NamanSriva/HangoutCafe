@@ -70,9 +70,9 @@ const MyCoupons = () => {
                 </p>
 
                 <div style={{ fontSize: '0.8rem', color: '#999', marginTop: '0.5rem'}}>
-                  <em>Issued from Cancelled Order #{coupon.generatedFromOrder ? coupon.generatedFromOrder._id.substring(coupon.generatedFromOrder._id.length - 6).toUpperCase() : 'N/A'} on {new Date(coupon.createdAt).toLocaleDateString()}</em>
+                  <em>Issued from Cancelled Order #{coupon.generatedFromOrder ? (coupon.generatedFromOrder.orderNumber || coupon.generatedFromOrder._id.substring(coupon.generatedFromOrder._id.length - 6).toUpperCase()) : 'N/A'} on {new Date(coupon.createdAt).toLocaleDateString()}</em>
                   {coupon.status === 'used' && coupon.usedInOrder && (
-                    <div style={{color: '#d32f2f', marginTop: '0.2rem'}}>Consumed in Order #{coupon.usedInOrder._id.substring(coupon.usedInOrder._id.length - 6).toUpperCase()}</div>
+                    <div style={{color: '#d32f2f', marginTop: '0.2rem'}}>Consumed in Order #{coupon.usedInOrder.orderNumber || coupon.usedInOrder._id.substring(coupon.usedInOrder._id.length - 6).toUpperCase()}</div>
                   )}
                 </div>
               </div>

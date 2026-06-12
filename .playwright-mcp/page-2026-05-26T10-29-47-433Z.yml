@@ -1,0 +1,63 @@
+- generic [ref=e2]:
+  - status [ref=e27]: Espresso Gold added to cart
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Hangout Cafe" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e9]: Hangout Cafe
+        - button [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+    - main [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - heading "Explore Our Menu" [level=1] [ref=e15]
+          - paragraph [ref=e16]: Premium ingredients, prepared by experts.
+        - generic [ref=e17]:
+          - button "All" [ref=e18] [cursor=pointer]
+          - button "Beverages" [ref=e28] [cursor=pointer]
+          - button "Breads" [ref=e29] [cursor=pointer]
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - img "Espresso Gold" [ref=e33]
+            - generic [ref=e34]:
+              - generic [ref=e35]:
+                - heading "Espresso Gold" [level=3] [ref=e36]
+                - generic [ref=e37]: ₹150.00
+              - paragraph [ref=e38]: Rich, aromatic double shot of premium gold-roasted beans.
+              - button "Add to Cart" [active] [ref=e39] [cursor=pointer]:
+                - img [ref=e40]
+                - text: Add to Cart
+          - generic [ref=e41]:
+            - img "Margherita Pizza" [ref=e43]
+            - generic [ref=e44]:
+              - generic [ref=e45]:
+                - heading "Margherita Pizza" [level=3] [ref=e46]
+                - generic [ref=e47]: ₹299.00
+              - paragraph [ref=e48]: Classic pizza with fresh mozzarella, basil, and tomato sauce.
+              - button "Add to Cart" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+                - text: Add to Cart
+          - generic [ref=e51]:
+            - img "Cold Coffee" [ref=e53]
+            - generic [ref=e54]:
+              - generic [ref=e55]:
+                - heading "Cold Coffee" [level=3] [ref=e56]
+                - generic [ref=e57]: ₹149.00
+              - paragraph [ref=e58]: Chilled coffee blended with ice cream.
+              - button "Add to Cart" [ref=e59] [cursor=pointer]:
+                - img [ref=e60]
+                - text: Add to Cart
+          - generic [ref=e61]:
+            - img "Cheese Burger" [ref=e63]
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - heading "Cheese Burger" [level=3] [ref=e66]
+                - generic [ref=e67]: ₹50.00
+              - paragraph [ref=e68]: Cheese Burger with double aloo patty.
+              - button "Add to Cart" [ref=e69] [cursor=pointer]:
+                - img [ref=e70]
+                - text: Add to Cart
+    - contentinfo [ref=e20]:
+      - paragraph [ref=e21]: © 2026 Hangout Cafe. All rights reserved.

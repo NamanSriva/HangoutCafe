@@ -67,7 +67,7 @@ const Cart = () => {
         couponCode: appliedCoupon ? appliedCoupon.code : undefined
       };
 
-      const { data } = await axios.post('/api/orders', orderData, config);
+      const { data } = await API.post('/api/orders', orderData, config);
 
       if (paymentMethod === 'UPI') {
         const upiLink = `upi://pay?pa=cafe@axis&pn=Hangout%20Cafe&am=${finalTotal.toFixed(2)}&cu=INR&tr=${data._id}`;
