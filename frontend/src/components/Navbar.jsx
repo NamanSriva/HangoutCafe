@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart, Moon, Sun, Coffee, User, Menu, X } from "lucide-react";
 import { ThemeContext } from "../context/ThemeContext";
 import { CartContext } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
+import API from "../api/axios";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -11,6 +12,44 @@ const Navbar = () => {
   const { cartItems } = useContext(CartContext);
   const { user, logout } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [newOrdersCount, setNewOrdersCount] = useState(0);
+
+  useEffect(() => {
+    let interval;
+    if (user && (user.isAdmin || user.email === "admin@hangoutcafe.com")) {
+      const checkNewOrders = async () => {
+        try {
+          const { data } = await API.get('/api/orders/stats');
+          const lastTotal = parseInt(localStorage.getItem('adminLastTotalOrders'), 10);
+          
+          if (isNaN(lastTotal)) {
+            // First time loading, initialize it
+            localStorage.setItem('adminLastTotalOrders', data.totalOrders.toString());
+            setNewOrdersCount(0);
+          } else if (data.totalOrders > lastTotal) {
+            setNewOrdersCount(data.totalOrders - lastTotal);
+          } else {
+            setNewOrdersCount(0);
+          }
+        } catch (err) {
+          console.error("Failed to fetch order stats", err);
+        }
+      };
+
+      checkNewOrders();
+      interval = setInterval(checkNewOrders, 15000);
+
+      const handleOrdersViewed = () => {
+        setNewOrdersCount(0);
+      };
+      window.addEventListener('ordersViewed', handleOrdersViewed);
+
+      return () => {
+        clearInterval(interval);
+        window.removeEventListener('ordersViewed', handleOrdersViewed);
+      };
+    }
+  }, [user]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -61,8 +100,13 @@ const Navbar = () => {
                   <Link to="/admin" className="nav-link admin-link" onClick={closeMenu}>
                     Dashboard
                   </Link>
-                  <Link to="/admin/orders" className="nav-link admin-link" onClick={closeMenu}>
+                  <Link to="/admin/orders" className="nav-link admin-link" onClick={closeMenu} style={{ position: 'relative' }}>
                     Orders
+                    {newOrdersCount > 0 && (
+                      <span style={{ position: 'absolute', top: '-6px', right: '-12px', background: '#ff4757', color: 'white', borderRadius: '50%', padding: '2px 6px', fontSize: '10px', fontWeight: 'bold' }}>
+                        {newOrdersCount}
+                      </span>
+                    )}
                   </Link>
                   <Link to="/admin/menu" className="nav-link admin-link" onClick={closeMenu}>
                     Menu Mgr

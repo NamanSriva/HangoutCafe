@@ -17,7 +17,10 @@ const AdminOrders = () => {
       setLoading(true);
       const { data } = await API.get('/api/orders');
       // Sort newest first
-      setOrders(data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
+      const sortedData = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      setOrders(sortedData);
+      localStorage.setItem('adminLastTotalOrders', sortedData.length.toString());
+      window.dispatchEvent(new Event('ordersViewed'));
     } catch (error) {
       toast.error('Failed to load orders');
     } finally {
